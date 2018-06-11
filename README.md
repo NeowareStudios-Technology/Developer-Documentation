@@ -6,10 +6,10 @@ Please keep this repo organized and well kept. In ordert to do this we ask that 
 
 ## Example of Notes/Document formatting
 
-Project:  Alice Speaks
-Topic:  Machine Learning Model Notes
-Created by: Alfonso Morales
-Date: 6/11/18
-Copyright © 2018 LeapWithAlice,LLC. All rights reserved.
+Project:  Alice Speaks  
+Topic:  Machine Learning Model Notes   
+Created by: Alfonso Morales   
+Date: 6/11/18   
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved   
 
 
