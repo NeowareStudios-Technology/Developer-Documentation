@@ -21,17 +21,41 @@ https://www.slideshare.net/mids106/dapp-design-patterns
 (5)-contract best practices
 https://consensys.github.io/smart-contract-best-practices/general_philosophy/
 
+(6)-High level architecture (hub and spoke)
+https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Dapp-Architecture-Designs
+
+(7)-ERC721 definitive Source
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
 
 
 *********Notes (2)**********
 (2)-CRUD Data storage with sequential access, random access, and delete
 https://medium.com/@robhitchens/solidity-crud-part-1-824ffa69509a
 
+CRUD (create,retrieve,update,delete) Data Storage Pattern
+-handles on-chain, table-like storage
+-allows for: 
+    -organize single entity ("table","collection") with a defined set of fields ("columnds","attributes")
+    -insert new records (or "documents") known by a key ("primary key", "document id)
+    -random retrieval of records by their keys
+    -retrieval of record count
+    -access list of all records
+    -update field(s) in any given record
+    -validate whether key exists or not
+    -delete record while maintaining internal structure
+-provides:
+    -simplicity
+    -shortened code
+    -efficient gas consumption
+    -scalability
+LWA use: store info about current lesson plan auctions on market
 
 
 *********Notes (4)**********
 (4)-design patterns (Devcon)
 https://www.slideshare.net/mids106/dapp-design-patterns
+
+https://github.com/ethereum/dapp-bin/blob/master/namereg/namereg.sol
 
 Name Registry Pattern 
 -needed to refer to address in human readable form
@@ -42,6 +66,7 @@ Name Registry Pattern
 
 
 *********Data Patterns To Use**********
+hub and spoke (high level)
 name registry
 CRUD for storing data (2)
 ERC20
