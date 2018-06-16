@@ -1,3 +1,9 @@
+Project: Alice Exchange
+Topic: Exchange Smart Contract Design Pattern Notes
+Created by: David Ramirez
+Date: 6/16/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
 
 *********Sources**********
 
