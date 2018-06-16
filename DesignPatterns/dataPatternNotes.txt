@@ -1,0 +1,40 @@
+
+*********Sources**********
+
+(1)-list patterns
+https://ethereum.stackexchange.com/questions/13167/are-there-well-solved-and-simple-storage-patterns-for-solidity?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+(2)-CRUD Data storage with sequential access, random access, and delete
+https://medium.com/@robhitchens/solidity-crud-part-1-824ffa69509a
+
+(3)-Common patterns from solidity docs
+http://solidity.readthedocs.io/en/v0.4.21/common-patterns.html
+
+(4)-design patterns (Devcon)
+https://www.slideshare.net/mids106/dapp-design-patterns
+
+(5)-contract best practices
+https://consensys.github.io/smart-contract-best-practices/general_philosophy/
+
+
+
+*********Notes (4)**********
+-design patterns (Devcon)
+https://www.slideshare.net/mids106/dapp-design-patterns
+
+Name Registry Pattern 
+needed to refer to address in human readable form
+example: if you wanted to have your UI display a name instead of an ethereum address
+LWA Use: use to display usernames of buyers/sellers in ui to decrease complexity.
+could be used globally (for multiple dapps) or only for one specific dapp
+can return name from inputted address, or return address from inputted name
+
+
+
+*********Data Patterns To Use**********
+name registry
+CRUD for storing data (2)
+ERC20
+ERC721
+
+
