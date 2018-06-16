@@ -1,0 +1,50 @@
+Project: General Development
+Topic: Telegram Bot Notes
+Created by: David Ramirez
+Date: 6/16/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+Basic Idea:
+-use AWS lambda to host
+-use Python 3
+-use Node.js
+-use "serverless" framework
+-install AWS CLI as pip extension for python
+
+
+Telegram Botfather info:
+Use this token to access the HTTP API:
+618508193:AAF8iw6Fj48a2t2EPDqaDgXu8nL-hdaUSA0
+You will find it at t.me/TesstTeBot.
+
+
+AWS credentials:
+user
+-serverless-admin
+access key
+-AKIAJA52CEQFNKHHXOSQ 
+secret access key
+-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
+
+
+AWS credentials #2:
+user
+-serverless-admin2
+access key:
+AKIAIGL53ZS2SUOSWLXA
+secret access key:
+-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
+
+
+Service Information
+service: alice-test-bot
+stage: dev
+region: us-east-1
+stack: alice-test-bot-dev
+api keys:
+  None
+endpoints:
+  POST - https://yjenbgb665.execute-api.us-east-1.amazonaws.com/dev/my-custom-url
+functions:
+  post: alice-test-bot-dev-post

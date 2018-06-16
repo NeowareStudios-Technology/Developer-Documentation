@@ -1,0 +1,49 @@
+Project: Alice Exchange
+Topic: ERC721 Notes
+Created by: David Ramirez
+Date: 6/16/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+
+Sources:
+-direct question
+https://ethereum.stackexchange.com/questions/50534/erc721-token-uniqueness
+
+-general question
+https://ethereum.stackexchange.com/questions/37199/erc20-vs-erc721utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+-anatomy of erc721
+https://medium.com/crypto-currently/the-anatomy-of-erc721-e9db77abfc24
+
+-walkthrough
+-https://medium.com/blockchannel/walking-through-the-erc721-full-implementation-72ad72735f3c
+
+
+
+Notes:
+-use ERC-721 interface for lesson plans?
+
+-"This definition is consistent with the fact that ERC-721 contracts track ownership of other things, such as houses, pictures of kittens or collectable cards. If you gain ownership of a house via ERC-721 then the thing that the ERC-721 contract tracks is the deed, the place where you live is the asset."
+
+-use "tokenMetadata()" function to store hash of lesson plan
+
+-token ownership
+-cannot simply map balance to address (like ERC20) because you have to know each unique token that you own
+-ERC721 ownership determined by array of toekn indexes or ids mapped to an address
+-have to look at each individual token created by the contract since each token value is unique
+-in addition to array of token indexes in entire contract, each individual address has an array of token indexes (or ids) that is mapped to their address to show ownership
+-instead of checking ownership against a balance (erc20), we need to check ownership against a specific index of a token (erc721)
+-can view all tokens with allTokens array
+-non-fungible, which again, for the millionth time means that tokens of the same class or contract can hold a different value
+
+-token creation
+-use mint() function, which adds token id to allTokens array and calls addTokenTo()
+-addTokenTo() updates all global ownership variables
+-set token URI data (meta data)with setTokenURI()
+-internal mapping of address->metadata is stored to associate metadata with specific token
+
+
+
+Conclusions:
+-we can use erc721 to represent lesson plans

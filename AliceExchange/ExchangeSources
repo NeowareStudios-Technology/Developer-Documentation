@@ -1,0 +1,34 @@
+Project: Alice Exchange
+Topic: Exchange Sources
+Created by: David Ramirez
+Date: 6/16/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+
+1) designing a dapp:
+https://www.slideshare.net/NicolasWagner2/architecture-ethereum-dapp
+
+2) dapp design patterns (identityGateway, name registry, datafeed, asset token (subcurrency), exchange, event log, incentivized trigger)
+https://www.slideshare.net/mids106/dapp-design-patterns
+
+3) common problems when making dapp vs app:
+https://medium.com/buyethdomains/design-patterns-app-vs-dapp-19ba694c8d44re
+
+4) design patterns (selfDestruct, factory, name registry, mapping iterator, sending ether from contract/withdrawal)
+https://medium.com/@i6mi6/solidty-smart-contracts-design-patterns-ecfa3b1e9784
+
+5) opensea marketplace for crypto collectables
+https://www.stateofthedapps.com/dapps/opensea
+
+6) decentraland 3d world (see whitepaper for architecture of incorporating IPFS)
+https://decentraland.org/
+
+7) ERC721 definitive source
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md
+
+8) ERC721 detailed walkthrough
+-https://medium.com/blockchannel/walking-through-the-erc721-full-implementation-72ad72735f3c
+
+9) ERC721 stack exchange question
+-https://ethereum.stackexchange.com/questions/50534/erc721-token-uniqueness
