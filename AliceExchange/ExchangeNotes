@@ -1,3 +1,9 @@
+Project: Alice Exchange
+Topic: ERC721 and ERC20 Exchange Research Notes
+Created by: David Ramirez
+Date: 6/19/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
 exchange should include:
 -main exchange contract
 -token tranfer proxy contract?
