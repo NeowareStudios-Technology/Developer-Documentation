@@ -1,0 +1,22 @@
+exchange should include:
+-main exchange contract
+-token tranfer proxy contract?
+  -allows contract to be upgraded
+  -analogous to a valve that may be opened or shut by dao contract
+  -old version of exchange contract may be deprecated and unable to perform trades,
+   so new and improved versions of the exchange contract are given permission to execute 
+   trades through decentralized governance implements in the dao
+-dao contract?
+  -controls proxy contract
+  -submit proposal, accept proposal, execute proposal
+  -only entity with permission to grant or revoke access to the token transfer proxy contract
+  -is the "owner" of token transfer proxy contract
+  
+  
+  erc721 exchanges:
+  openSea
+  wyvern 
+  
+  
+  erc20 exchange protocols:
+  0x protocol
