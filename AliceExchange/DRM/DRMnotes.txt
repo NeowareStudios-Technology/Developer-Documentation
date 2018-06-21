@@ -1,0 +1,163 @@
+Conclusions:
+-Using ERC-721 tokens is effectively the same as using a DRM
+	-solves proof of ownership, fraud prevention, and transfer of ownership
+-challenge: how to stop redistribution once the lesson plan is downloaded
+	-social DRM?
+	-cloud hosted instead of download?
+	-integrate a check mechanism in the AR player apps?
+
+*****************************************************************
+
+
+DRM General info (non-blockchain)
+
+Digital rights management (DRM) is a set of access control technologies for restricting the use of proprietary hardware and copyrighted works.[1] DRM technologies try to control the use, modification, and distribution of copyrighted works (such as software and multimedia content), as well as systems within devices that enforce these policies
+
+proponents say that DRM:
+-prevents intellectual property from being copied freely
+-can help the copywriter maintain artistic control
+-can ensure continued revenue streams
+
+opponents say that DRM:
+-has no evidence supporting claims of prevented copyright infringement
+-serves only to inconvenience legitimate customers
+-helps big business stifle innovation and competition
+-can cause works to be permanently inaccessable if the DRM scheme changes or if the service is discontinued
+-can restrict users from exercising their legal rights under the copyright law (such as backing up copies of CDs or DVDs, lending materials through a library, or using copyrighted materials for research and education under the "fair use doctrine")
+
+	-https://en.wikipedia.org/wiki/Digital_rights_management
+
+
+
+*****************************************************************
+
+
+Current DRM Solutions (non-blockchain):
+
+Adobe DRM (Adobe Content Server (ACS)):
+-server software solution that protects PDF and EPUB files
+-ACS protected files can be read from your own customized "Bluefire Reader white label apps" or the free Adobe Digital Editions app on all major platforms
+-integrates with existing online bookstore technologies, libraries, and educational solutions
+-offers granular permissions-based control over viewing, printing, and copying
+-supports multiple business models including purchase, lending, rentals, classroom scenarios and more
+	-http://www.bluefirereader.com/adobe-drm.html
+
+Social DRM (concept, not a company or specific product)
+-a type of watermarking
+-less intrusive type of DRM than intrusive approaches that tend to penalize legal users without seriously impeding the activities of serious pirates
+-involves incorporation of unobtrusive (or surreptitious) ownership identity info into a downloadable file so that the origin of the file can be tracked
+-social DRM usually used for smaller publications
+	-https://blogs.datalogics.com/2017/04/28/the-false-promise-of-social-drm/
+
+Amazon DRM
+-restricts playback of file to users who have authenticated with a third-party DRM license server
+-packages a DRM header in the segments of the file
+-DRM packaging includes the info required to contact the license server and any encryption info needed to play a file
+-Once the file has been packaged, it is sent to the content distribution network, which can be a service such as Amazon S3 and CloudFront, or a non-AWS service such as Akamai
+-After the file has been distributed, the license server needs to be contacted for a license before the file plays
+-DRM goes beyond standard encryption by specifying an entire set of protocols for content protection
+ 
+
+
+    (1)The content provider (you) calls the DRM license provider with a content key ID to generate a content key.
+    (2)The license provider uses the key ID to generate a content key and returns it and a license acquisition URL to the content provider.
+    (3)The content provider calls AWS KMS to encrypt the content key, and AWS KMS returns the encrypted content key.
+    (4)The content provider calls the package server (Elastic Transcoder) with the encrypted content key, key ID, and license acquisition URL.
+    (5)The package server fetches the file to be protected, and bundles it with the DRM information.
+    (6)The package server sends the DRM-protected file to the distribution server, which distributes the file.
+	https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/drm.html
+
+Apple FairPlay
+-DRM scheme developed by Veridisc
+-designed to encrypt content packaged using HTTP Live Streaming and is intended for use with all iOS devices
+-Apple Fairplay is built into QuickTime player
+-Apple orginially used FairPlay to protect content distributed through the iTunes Music Store
+-Apple no longer encrypts iTunes Music Downloads, FairPlay DRM is still used in the new Apple Music service for content stored locally
+-FairPlay Streaming does not provide DRM rights, enforce policies, authenticate users, or authorize devices
+ 
+1. The app requests to play asset from Apple’s AVfoundation media framework
+2. AVfoundation media framework then downloads the m3u8 playlist which contains your content key
+3. The media framework will then request the key from the media framework delegate built into the app
+4. The app delegate then responds to the media framework to make a request from the FairPlay Streaming Server
+5. The delegate then sends the FairPlay Server Playback Content to your Key Server
+6. The key server then interprets the Server Playback Content using the Key Security Module and searches for the Content Key
+7. When the search is completed the Key Security Module applies the content key
+8. The media framework delegate then provides the key response to the media framework
+9. The content is now decrypted and the app and device can execute playback
+	-https://www.encoding.com/apple-fairplay/
+
+Marlin (DRM)
+-DRM platform, created by an open-standards community intiative called the Marlin Developer Community (MDC)
+-offers sophisticated copyrights management for playing entertainment and media content (including, audio, video, ebooks, and games) distributed over mobile, broadband, broadcast, and all other popular channels
+-Since Marlin is not a proprietary DRM, it is able to deliver content over any network or physical media
+-ports licensed content across devices and services in a consumer’s home or personal domain and supports a large and flexible set of business models for content distribution, including yet-to-be-defined business models
+-Intertrust, Panasonic, Philips, Samsung, and Sony co-founded the Marlin DRM standard in 2005
+	-https://www.intertrust.com/marlin-drm/
+	-http://www.marlin-community.com/technology
+
+
+*****************************************************************
+
+
+Intel Files patent for using blockchain for downloading the rights to digital images (3/8/18)
+
+Platform:
+-blockchain used to document and verify attributs of digital content relevant to copyright protection
+	-e.g. identifier for author of content, creation timestamp, 
+	measurement to identify copying or modification of content
+-platform uses several types of software to automatically assess copyright policy settings for each image, even if picture was taken from external sources
+-platform creates unique identity for both the original content and any modified versions
+	-these identities called "shadow images"
+-platform allows users to maintain works in progress
+
+
+
+*****************************************************************
+
+
+(take with grain of salt/ author not vetted)
+Ethereum Quantum Protocols (ERC20 + ERC721) for digital assets:
+
+-Ethereum blockchain can solve these problems(proof of ownership, fraud prevention, transfer of ownership) by combining ERC721 tokens with ER20 tokens in a "Quantum Protocol" system
+-2 things must be done:
+	-keep erc721 smart contract logic lightweight
+		-limit amount of info embedded into the smart contract
+	-make erc721 tokens interchangable with fungible erc20 
+	tokens, which can be easily bought and sold
+
+-https://medium.com/@goblockparty/introducing-ethereum-quantum-protocols-solving-digital-asset-transfers-73098bc9f3b8
+
+
+*****************************************************************
+
+
+Smart contracts & digital rights management (DRM)
+
+prevention of copying
+-encrypt the information
+-social drm (e.g. place name of official buyer in digital asset so that it can be tracked)
+
+From Stateless to State Aware DRM
+-stateless DRM:
+	-prevents duplication
+	-prevents distribution
+
+	-once you encrypt the info with a specific key, you cannot 
+	change that key
+		-if someone unintended finds the key, you are out of 
+		luck
+
+-state aware DRM
+	-knows original creator, owner
+	-knows statistics on readers
+	-renumeration of original creators, owners when a transfer
+	happens
+
+	-because on blockchain, can add information to digital 
+	asset (da)and it will be difficult to tamper with 	(immutability)
+
+-this lecture seems to apply more to digital assets of which the entirety of the asset is stored on the blockchain
+
+
+
+
