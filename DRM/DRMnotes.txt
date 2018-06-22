@@ -1,3 +1,12 @@
+Project: Alice Exchange/ Alice Lens
+Topic: Digital Rights Management (DRM) Notes
+Created by: David Ramirez
+Date: 6/21/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+*****************************************************************
+
 Conclusions:
 -Using ERC-721 tokens is effectively the same as using a DRM
 	-solves proof of ownership, fraud prevention, and transfer of ownership
