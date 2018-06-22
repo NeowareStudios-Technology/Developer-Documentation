@@ -4,7 +4,7 @@ Conclusions:
 -challenge: how to stop redistribution once the lesson plan is downloaded
 	-social DRM?
 	-cloud hosted instead of download?
-	-integrate a check mechanism in the AR player apps?
+	-integrate a check mechanism in the AR player apps? --I think this may be the best option
 
 *****************************************************************
 
