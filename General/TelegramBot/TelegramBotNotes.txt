@@ -5,7 +5,7 @@ Date: 6/16/18
 Copyright © 2018 LeapWithAlice,LLC. All rights reserved
 
 
-Basic Idea:
+Basic Idea with AWS:
 -use AWS lambda to host
 -use Python 3
 -use Node.js
@@ -13,10 +13,20 @@ Basic Idea:
 -install AWS CLI as pip extension for python
 
 
+Basic Idea with Heroku:
+-Use Heroku to host
+-use python 3
+-use "virtualenv" framework
+-use of git to controls heroku repo
+-install Heroku CLI and deply through that
+
+
 Telegram Botfather info:
 Use this token to access the HTTP API:
-618508193:AAF8iw6Fj48a2t2EPDqaDgXu8nL-hdaUSA0
-You will find it at t.me/TesstTeBot.
+619898585:AAFvRpxQB-F38JeFo531ZLgq6_aZtkS49N4
+You will find it at t.me/HerokuuTestBot
+-bot name: HerokuuTestBot 
+-display name: Heroku-test-bot
 
 
 AWS credentials:
@@ -37,7 +47,7 @@ secret access key:
 -G75WIaMPxn4jkKpBhkbXzKAmPuMB1OUeD8EUfjM5
 
 
-Service Information:
+Service Information AWS:
 service: alice-test-bot
 stage: dev
 region: us-east-1
@@ -51,7 +61,27 @@ functions:
   
   
 Deploy on heroku information:
-Having the following problem: the command "heroku ps:scale web=1" is not working
-  https://help.heroku.com/W23OAFGK/why-am-i-seeing-couldn-t-find-that-process-type-when-trying-to-scale-dynos
-tutorial link:
-  https://djangostars.com/blog/how-to-create-and-deploy-a-telegram-bot/
+-log into heroku cli with <heroku login>
+-open environment in "my_env" directory with <scripts\activate.bat>
+-go to deployment repo "TeleBotHeroku"
+-enter <git add .>
+-enter <git commit -m "m">
+-enter <git push heroku master>
+-- app should now be working
+
+*look at heroku processes*
+<heroku ps>
+
+*start heroku process*
+<heroku ps:scale worker=1>
+
+*look at heroku console log*
+<heroku logs>
+
+*adding dependencies to heroku app*
+-make sure you are in environement (my_env) and is running with <scripts\activate.bat>
+-go to deployment repo (TeleBotHeroku)
+-install python dependencies with pip
+-place dependency list in "requirements.txt" with <pip freeze > requirements.txt>
+  
+  
