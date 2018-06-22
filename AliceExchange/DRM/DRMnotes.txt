@@ -56,8 +56,6 @@ Amazon DRM
 -Once the file has been packaged, it is sent to the content distribution network, which can be a service such as Amazon S3 and CloudFront, or a non-AWS service such as Akamai
 -After the file has been distributed, the license server needs to be contacted for a license before the file plays
 -DRM goes beyond standard encryption by specifying an entire set of protocols for content protection
- 
-
 
     (1)The content provider (you) calls the DRM license provider with a content key ID to generate a content key.
     (2)The license provider uses the key ID to generate a content key and returns it and a license acquisition URL to the content provider.
@@ -158,6 +156,52 @@ From Stateless to State Aware DRM
 
 -this lecture seems to apply more to digital assets of which the entirety of the asset is stored on the blockchain
 
+	-https://www.youtube.com/watch?v=CTrm08R3J2E&t=1652s
 
 
+*****************************************************************
 
+How to implement a DRM
+
+-There is no precise definition of DRM
+	-it is what the contnet owners require it to be
+-encryption is good, but it alone isn't sufficient for premium content protection because decryption keys can be captured
+-DRM provides separate licensing server, secure player, and legitimate digital rights to manage and therefore do a much better job than plain encryption
+-True DRMs SHOULD have:
+	-third-party licensing server to issue decryption keys
+	-secure environment to protect the keys
+	-distinct content rights expressed in the license key file
+-True DRMs MAY provide additional protection by having:
+	-rotating keys 
+	-synchonization with a local system clock 
+	-providing support for third-party output protection schemas
+-With DRM, a variety of digital copy-protection designs can be used
+-DRM files are content copies that have been precisely encoded an made available to recognized devices and authorized users
+-There may be hurdles to overcome with DRM:
+	-must be moderated the right way
+	-could have problem locating a title in the menu on a media 
+	server folder if it is in DRM format
+	-media player must be compatible with DRM file
+-Leaders in DRM:
+	-Microsoft PlayReady
+	-Google Widevine
+	-Apple Fairplay
+	-Adobe PrimeTime
+	-Verimatrix ViewRight
+	-Marlin
+-each of the above solutions has has different capabilitiwes and compatabilities
+	-for HTML-based browser streaming, PlayReady would work only
+	on IE and Microsoft Edge
+	-FairPlay only works on Safari
+	-PrimeTIme works on Firefox
+	-Widevine works on Chrome and Opera
+	-etc
+Implementing multiple DRMS
+-there is inconsistency in DRM space
+-too many disconnects in way DRM solutions are mapped to streaming devices in various environments, which makes it difficult for a source title to be securely delivered to each cient
+-A consistent medium of secure conent delivery can be created by integrating multiple DRM solutions on a DRM management service
+-service console can be used to determine a different DRM on every occasion by applying sophisticated logic gates to switch between DRM protocols depending on the client who called for a particular title
+
+*This article seems to pertain to using a DRM with multiple different forms of media and with different players. It may offer solutions that are more advanced than the needs of a DRM with one form of media and one player. 
+	
+	https://www.muvi.com/blogs/what-is-drm-how-to-implement-right-one.html
