@@ -1,0 +1,28 @@
+Project: Alice Speaks
+Topic: Machine Learning Model Notes
+Created by: Alfonso Morales
+Date: 6/11/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+********************************************************************************
+
+Conclusion: 
+-any will work
+-noSQL better for working with google app engine
+-realtime database is best but most exensive
+-budget seput: google app engine, with noSQL(bigtable) 
+-pro setup: google app engine, with noSQL(bigtable), with realtime db(firebase)
+
+********************************************************************************
+
+SQL vs noSQL
+Notes: either should work, noSQL may be better
+	noSQL: bigtable google
+https://www.slideshare.net/jamserra/relational-databases-vs-nonrelational-databases
+
+realtime db
+Notes: would make app actual real time, but also more expensive
+	-firebase
+https://firebase.google.com/docs/database/
+
+********************************************************************************

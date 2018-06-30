@@ -1,0 +1,106 @@
+Project: ConnectEd
+Topic: Discussion on Cloud Service Pricing
+Created by: David Ramirez
+Date: 6/26/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+********************************************************************************
+
+Conclusions:
+-it is extremely difficult to do a price comparison between comparable services because each has a 
+different pricing structure
+-Should probably go with traditional architecture (not serverless) due to team familiarity and non-beta 
+status of components
+	-this would use a PaaS or a PaaS/BaaS combination
+-General consensus:
+	-app engine cheaper for low use, maybe more expensive for high use
+	-AWS have to pay a base fee, may be cheaper for high use
+	-Amazon may be cheaper than heroku
+	-App engine cheaper for under 120GB storage, heroku cheaper for over
+	-this says google is most cheap
+	
+	https://www.rightscale.com/blog/cloud-cost-analysis/comparing-cloud-instance-pricing-aws-vs-
+azure-vs-google-vs-ibm
+-final: use App Engine for ease of use and budget
+
+********************************************************************************
+
+combinations:
+1) Firebase (cloud functions currently in beta)
+2) Firebase with App Engine
+3) App Engine
+4) AWS Elastic Beanstalk
+5) Heroku
+My Choice: App Engine
+-familiarities with architecture
+-familiarities with services
+-no beta components
+
+********************************************************************************
+Firebase (serverless design) Pricing:
+-What Comes Free:
+	-authentication
+	-analytics
+	-predictions
+	-app indexing
+	-dyncamic links
+	-invites
+	-remote configuration
+	-cloud messaging
+	-perormance monitoring
+	-crash analytics
+-Hosting:
+	-GB stored: $0.026/GB
+	-GB transferred: $0.15/GB
+	-Custom domain and SSL allowed
+-RT database (old, more expensive, bad option): 
+	-simultaneous connections: 100k/database
+	-GB stored: $5/GB
+	-GB downloaded: $1/GB
+	-multiple databases per project allowed
+-Cloud Firestore (comparable to RT database, new flagship, cheaper, better option)
+	-GB stored:  $0.18/GB
+	-Doc writes: $0.18/100K
+	-Doc reads: $0.06/100K
+	-Doc deletes: $0.02/100K
+	-Google Cloud Network Pricing: https://cloud.google.com/compute/pricing#network
+-Storage (not RT, traditional HTTP requests instead of data synchronization across all clients)
+	-GB stored: $0.026/GB
+	-GB downloaded: $0.12/GB
+	-upload operations: $0.05/10k
+	-download operations: $0.004/10k
+-Cloud Functions 
+	-Invocations: $0.40/million
+	-GB-seconds: $0.0025/thousand
+	-CPU-seconds: $0.01/thousand
+	-outbound networking: $0.12/GB
+-Test Lab
+	-Virtual Device Tests: $1/device/hour
+	-Physical Device Tests: $5/device/hour
+https://firebase.google.com/pricing/
+********************************************************************************
+AWS Lambda (serverless design) Pricing:
+https://aws.amazon.com/lambda/pricing/
+********************************************************************************
+App Engine (PaaS design) Pricing:
+Instance Class and runtime price (includes all services, like a package deal):
+	-F1	$0.05/hr
+	-F2	$0.10/hr
+	-F4	$0.20/hr
+	-F4_1G		$0.30/hr
+https://cloud.google.com/appengine/pricing
+price calculator:
+https://cloud.google.com/products/calculator/#tab=app-engine
+********************************************************************************
+AWS Elastic Beanstalk (PaaS design) Pricing:
+Uses EC2, S3, and AWS database pricing
+https://aws.amazon.com/elasticbeanstalk/pricing/
+********************************************************************************
+Heroku (PaaS design) Pricing:
+Dynos (like instance classes)
+https://www.heroku.com/pricing?c=70130000001xDpdAAE&gclid=EAIaIQobChMI9YCyw5Ly2wIVkI-zCh3
+x0ANCEAAYASABEgJ-0vD_BwE
+
+********************************************************************************
+
+

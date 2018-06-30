@@ -1,0 +1,10 @@
+App Engine Standard Environment features:
+https://cloud.google.com/appengine/docs/standard/#instance_classes
+
+********************************************************************************
+
+Pricing Quotas
+https://cloud.google.com/appengine/quotas
+
+
+

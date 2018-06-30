@@ -1,0 +1,35 @@
+Project: Alice Speaks
+Topic: General Sources List
+Created by: Alfonso Morales
+Date: 6/26/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+********************************************************************************
+Google cloud and Amazon cloud equivalences
+https://cloud.google.com/free/docs/map-aws-google-cloud-platform
+
+Firebase vs App engine:
+-https://medium.com/the-infinite-machine/app-engine-vs-firebase-welcome-to-bizzaro-world-24c257ef
+4908
+
+Design Patterns incorporating Firebase and App Engine
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#design-pattern
+
+Firbase pricing:
+https://firebase.google.com/pricing/
+
+App Engine pricing:
+https://cloud.google.com/appengine/pricing
+
+-friendly pix sample app (shows: analytics, rt database, cloud functions, crash reporting, authentication, 
+storage)
+https://github.com/firebase/friendlypix-web
+
+-firebase/google cloud platform starting docs:
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#design-pattern
+
+-adding firebase to web app
+https://firebase.google.com/docs/web/setup
+
+-google backend solutions
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#design-pattern
+

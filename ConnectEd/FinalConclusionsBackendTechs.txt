@@ -1,0 +1,34 @@
+Project: ConnectEd
+Topic: Backend Technologies to use for ConnectEd app
+Created by: David Ramirez
+Date: 6/27/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+********************************************************************************
+-use Google App Engine Standard Environment
+	-use Python
+	-monitoring/debugging included
+	-authentication plugin included
+	-versioning included
+	-security included 
+	-hosting
+-use bigtable (noSQL) db
+
+********************************************************************************
+Use this:
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#appengine-endpoints
+********************************************************************************
+Finalized reasoning for choices:
+App Engine
+	-Will have familiarity with App Engine due to class
+	-Cheaper option of PaaS(perhaps?)
+	-Comes with many needed features (analytics, security, scaling)
+-bigtable
+	-easy integration with App Engine
+	-higher throughput than sql db 
+	-for cheaper data storage
+-firebase
+	-for realtime db
+	-for authentication
+	-not needed
+
+

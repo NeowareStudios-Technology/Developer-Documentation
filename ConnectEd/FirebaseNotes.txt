@@ -1,0 +1,20 @@
+Project: ConnectEd 
+Topic: Firebase Notes
+Created by: David Ramirez
+Date: 6/25/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+*************************************************************************************
+-friendly pix sample app (shows: analytics, rt database, cloud functions, crash reporting, authentication, 
+storage)
+https://github.com/firebase/friendlypix-web
+
+-firebase/google cloud platform starting docs:
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#design-pattern
+
+-adding firebase to web app
+https://firebase.google.com/docs/web/setup
+
+-google backend solutions
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#design-pattern
+*************************************************************************************
+

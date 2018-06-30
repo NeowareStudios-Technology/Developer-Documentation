@@ -1,0 +1,55 @@
+Project: Alice Speaks
+Topic: Discussion of which PaaS to use (Amazon, Heroku, Google)
+Created by: David Ramirez
+Date: 6/26/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+********************************************************************************
+
+Conclusions:
+-prices seem all over the place
+	-app engine cheap for low use, heroku for higher use, AWS cheaper than heroku (generally)
+-final: use Google App Engine because of familiarity and budget (may incorporate firebase)
+
+
+********************************************************************************
+
+basic components:
+1) PaaS or BaaS (serverless) service
+2) RT database
+	-may be included in PaaS or BaaS
+3) Analytics
+	-may be included in PaaS or BaaS
+3) Traditional database (noSQL should work)(to save money?)
+	-may be included in PaaS or BaaS
+4) Authentication
+	-may be included in PaaS or BaaS
+
+********************************************************************************
+
+Google App Engine Vs. Heroku
+https://www.upguard.com/articles/heroku-appengine
+App Engine:
+-Apps have to be written with App Engine specifically in mind
+-App Engine must use BigTable non-relational database or CloudSQL
+-porting apps away from App Engine is a major task
+Heroku:
+	-can use relational and non-relational databases
+		-PostgreSQL, MongoDB, Cloudant, Redis
+	-infrastructure hosted on Amazon's EC2 cloud servers
+Authors take:
+	-Heroku is more customizable and cheaper
+
+********************************************************************************
+
+Google App Engine Vs. Heroku
+http://kmilo0.blogspot.com/2013/02/gae-vs-heroku.html
+Authors Take: 
+	-GAE cheaper for under 120 GB storage, heroku cheaper for over
+
+********************************************************************************
+
+
+
+
+	
