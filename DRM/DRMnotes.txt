@@ -2,7 +2,7 @@ Project: Alice Exchange/ Alice Lens
 Topic: Digital Rights Management (DRM) Notes
 Created by: David Ramirez
 Date: 6/21/18
-Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+Copyright Â© 2018 LeapWithAlice,LLC. All rights reserved
 
 
 *****************************************************************
@@ -12,8 +12,8 @@ Conclusions:
 	-solves proof of ownership, fraud prevention, and transfer of ownership
 -challenge: how to stop redistribution once the lesson plan is downloaded
 	-social DRM?
-	-cloud hosted instead of download?
-	-integrate a check mechanism in the AR player apps? --I think this may be the best option
+	-cloud hosted instead of download? (not viable because do not want to have to be online)
+	-integrate a check mechanism in the AR player apps? (not viable because do not want to have to be online)
 
 *****************************************************************
 
@@ -82,7 +82,7 @@ Apple FairPlay
 -Apple no longer encrypts iTunes Music Downloads, FairPlay DRM is still used in the new Apple Music service for content stored locally
 -FairPlay Streaming does not provide DRM rights, enforce policies, authenticate users, or authorize devices
  
-1. The app requests to play asset from Apple’s AVfoundation media framework
+1. The app requests to play asset from Appleâ€™s AVfoundation media framework
 2. AVfoundation media framework then downloads the m3u8 playlist which contains your content key
 3. The media framework will then request the key from the media framework delegate built into the app
 4. The app delegate then responds to the media framework to make a request from the FairPlay Streaming Server
@@ -97,7 +97,7 @@ Marlin (DRM)
 -DRM platform, created by an open-standards community intiative called the Marlin Developer Community (MDC)
 -offers sophisticated copyrights management for playing entertainment and media content (including, audio, video, ebooks, and games) distributed over mobile, broadband, broadcast, and all other popular channels
 -Since Marlin is not a proprietary DRM, it is able to deliver content over any network or physical media
--ports licensed content across devices and services in a consumer’s home or personal domain and supports a large and flexible set of business models for content distribution, including yet-to-be-defined business models
+-ports licensed content across devices and services in a consumerâ€™s home or personal domain and supports a large and flexible set of business models for content distribution, including yet-to-be-defined business models
 -Intertrust, Panasonic, Philips, Samsung, and Sony co-founded the Marlin DRM standard in 2005
 	-https://www.intertrust.com/marlin-drm/
 	-http://www.marlin-community.com/technology
