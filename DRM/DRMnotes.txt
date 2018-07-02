@@ -16,6 +16,7 @@ Conclusions:
 	-cloud hosted instead of download? (not viable because do not want to have to be online)
 	-integrate a check mechanism in the AR player apps? (not viable because do not want to have to be online)
 -using existing DRM (marlin) is likely a better option than creating our own
+	-too many peices that I have no experience in to be able to create industry ready solution in reasonable amount of time
 
 *****************************************************************
 
