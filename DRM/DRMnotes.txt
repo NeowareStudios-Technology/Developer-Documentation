@@ -11,6 +11,7 @@ Conclusions:
 -Using ERC-721 tokens is effectively the same as using a DRM
 	-solves proof of ownership, fraud prevention, and transfer of ownership
 -challenge: how to stop redistribution once the lesson plan is downloaded
+	-encryption/decryption?
 	-social DRM?
 	-cloud hosted instead of download? (not viable because do not want to have to be online)
 	-integrate a check mechanism in the AR player apps? (not viable because do not want to have to be online)
