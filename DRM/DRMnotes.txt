@@ -108,6 +108,20 @@ Marlin (DRM)
 
 *****************************************************************
 
+Cappasity ar/vr exchange on Ethereum (with drm)
+
+-seems to be only tokens that do the tracking of ownership
+-can not find anything about verification before "playing"
+	-though this quote seems to point in that direction:
+	"In this case, we guarantee that the content will not be used in any other application since the plugin validates the data before the app is prepared to be released."
+-seem to always call the drm aspect "copyright storage" and not "drm"
+	-this is more like a social drm
+-for content quality, they will have a "smart contrct protocol" that checks to make sure content is not already copyrighted and they will have human moderators that will be able to vote on content
+
+Conclusion: The drm aspect of this seesm nothing more than using tokens to store ownership and creation info
+
+*****************************************************************
+
 
 Intel Files patent for using blockchain for downloading the rights to digital images (3/8/18)
 
