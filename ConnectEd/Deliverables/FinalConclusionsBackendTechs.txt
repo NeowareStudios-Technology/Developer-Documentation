@@ -1,0 +1,69 @@
+Project: ConnectEd
+Topic: Backend Technologies to use for ConnectEd app
+Created by: David Ramirez
+Date: 6/27/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+********************************************************************************
+Backend Services used:
+
+-Google App Engine Standard Environment
+	-use Python
+	-monitoring/debugging included
+	-authentication plugin included
+	-versioning included
+	-security included 
+	-hosting
+-Google Cloud Datastore database (noSQL)
+-Cloud Storage (large file storage, pics, etc.)
+-Google BigQuery for data analysis (can import db from datastore)
+-Google Cloud Endpoints for API framework (integrated into GAE standard environment)
+-OAuth for authentication protocol
+-StackDriver for monitoring, debugging, tracing, and error reporting (integrated into GAE Console)
+
+
+********************************************************************************
+High Level Architecture:
+
+https://cloud.google.com/solutions/mobile/mobile-app-backend-services#appengine-endpoints
+
+
+********************************************************************************
+Reasoning for choices:
+App Engine Standard Environment
+	-Will have familiarity with App Engine due to class
+	-Cheaper option of PaaS
+	-Comes with many needed features (analytics, security, scaling)
+        -more cohesive PaaS
+	-Can scale down to 0 if no users are using app
+	-faster development than GAE Flexible Environment
+-DataStore
+	-provides eventual consistency (fine for our needs)
+        -higher throughput than sql
+        -cheaper than firebase and other options of noSQL
+        -seamless integration with GAE
+	-provides more Availability and Partition Tolerance, but less Consistency (CAP Theory)
+        	-should provide more than good enough consistency for our needs
+-Cloud Storage
+	-comparable price
+	-seamless integration with GAE and DataStore
+-BigQuery
+	-Can import data from DataStore
+	-Used for certain queries that would not be possible with only DataStore
+	-seamless integration with DataStore and GAE
+-Cloud Endpoints
+	-much faster development time due to not needing to develop for different platforms
+		-e.g. ios, android, web
+		-only need to make one set of code, endpoints does the rest
+	-seamless integration with GAE (in fact needed with GAE standard environment)
+	-seamless integration with Python
+-OAuth
+	-trusted by many large companies (including Google)
+	-time tested
+	-seamless integration with GAE
+-Stackdriver
+	-standard for monitoring cloud systems (Amazon uses this as well)
+	-already integrated into GAE
+
+
