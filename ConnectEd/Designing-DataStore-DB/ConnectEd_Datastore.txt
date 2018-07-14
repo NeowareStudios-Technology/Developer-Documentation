@@ -29,6 +29,9 @@ REQUIREMENTS/NOTES:
 
 QR CODE IS SAVED IN EVENT ENTITY
 
+USING KEY PROPERTY FOR C_EVENTS,ETC RELIES ON SAVING ALL EVENTS FOREVER
+
+
 ****************************************************************************************
 
 QUESTIONS:
@@ -37,5 +40,6 @@ QUESTIONS:
 3) Should "dates active" under "Event" be required?
 4) Should "address" under "Event" be required?
 5) Should "env" (inside,outside) under "Event" be required?
+6) Should events be saved forever or deleted after a period of time?
 
 
