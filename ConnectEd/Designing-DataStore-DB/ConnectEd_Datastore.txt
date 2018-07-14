@@ -1,0 +1,41 @@
+ConnectEd DataStore Design Docs
+
+****************************************************************************************
+CHANGES:
+
+-under "UserProfile" Entity 
+	-"f_events" (future events),"p_events" (past events), and "c_events" (created events) added
+-under "Event" Entity (or "Created Event/Creating Opportunity") 
+	-changed "Start Time" to "start_times" (list)
+	-changed "End Time" to "end_times" (list)
+	-added "address"
+	-"location" refers to GPS location
+
+****************************************************************************************
+REQUIREMENTS/NOTES:
+
+-under "UserProfile" Entity
+	-"f_events" must be keys of events user will be attending
+	-"p_events" must be keys of events user has attended
+	-"c_events" must be keys of events user has created
+	-value for "u_photo" is the name of a Cloud Storage file representing the user photo
+-under "Event" Entity
+	-for "env" property, choices "o, i, b" correspond to "out, in, both"
+	-all values for "dates_active", "start_times", and "end_times" must have all associated data at same index
+	-all key values for "leaders" must be existing user keys
+	-value for "e_photo" is the name of a Cloud Storage file representing the event photo
+****************************************************************************************
+
+
+QR CODE IS SAVED IN EVENT ENTITY
+
+****************************************************************************************
+
+QUESTIONS:
+1) What is Personal Schedule?
+2) Should "event description" under "Event" be required?
+3) Should "dates active" under "Event" be required?
+4) Should "address" under "Event" be required?
+5) Should "env" (inside,outside) under "Event" be required?
+
+
