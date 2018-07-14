@@ -1,0 +1,5 @@
+-GAE User object
+https://cloud.google.com/appengine/docs/standard/python/users/userobjects
+
+-GAE User object
+https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine.api.users#google.appengine.api.users.User

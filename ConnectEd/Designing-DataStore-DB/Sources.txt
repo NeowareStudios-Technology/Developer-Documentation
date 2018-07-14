@@ -8,4 +8,27 @@ Copyright © 2018 LeapWithAlice,LLC. All rights reserved
 -Balancing Strong and Eventual Consistency
 https://cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/
 
--
+-memcache docs
+https://cloud.google.com/appengine/docs/standard/python/memcache/
+
+-memcache best practices
+https://cloud.google.com/appengine/articles/best-practices-for-app-engine-memcache
+
+-uses for memcache
+https://cloud.google.com/appengine/articles/scaling/memcache
+
+-task queues
+https://cloud.google.com/appengine/docs/standard/python/taskqueue/#Python_Tasks_within_transactions
+
+-storing and retrieving images
+https://cloud.google.com/appengine/docs/standard/python/images/
+
+-Cloud Storage docs (storing images and files)
+https://cloud.google.com/storage/docs/
+
+-Cloud Storage best practices
+https://cloud.google.com/storage/docs/best-practices
+
+-google calendar API integraton
+https://developers.google.com/apis-explorer/?hl=en_US#p/calendar/v3/
+
