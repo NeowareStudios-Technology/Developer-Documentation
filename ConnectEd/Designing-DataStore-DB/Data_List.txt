@@ -1,0 +1,265 @@
+ConnectED Data 
+
+Login -Create Account:
+
+Email
+
+Password
+
+Confirm Password
+
+First and Last Name
+
+Profile Photo
+
+The Following is Creating Profile Data:
+
+Schedule Info (Optional)
+
+Interested Fields of Volunteering (Optional):
+
+- List of Tags (interested events):
+
+    Advocacy and Human Rights
+
+    Animals
+
+    Arts & culture
+
+    Children & Youth
+
+    Community
+
+    Counseling
+
+    Crisis Support
+
+    Disaster Relief
+
+    Education & Literacy
+
+    Emergency & Safety
+
+    Employment
+
+    Environment
+
+    Faith-based
+
+    Health & Medicine
+
+    Homeless & Housing
+
+    Human Services
+
+    Hunger
+
+    Immigrants & Refugees
+
+    international
+
+    Justice & Legal
+
+    LGBTQ    
+
+    Media
+
+    Mentoring
+
+    People with Disabilities
+
+    Politics
+
+    Seniors
+
+    Sports & Recreation
+
+    Technology
+
+    Veterans
+
+    Women
+
+Educational Experience (one chosen):
+
+    Completed 8th grade
+
+    Some high school
+
+    HS diploma
+
+    Some college
+
+    Associates degree
+
+    Bachelors degree
+
+    Masters degree
+
+    Doctoral degree
+
+My Specialized Skills Involve (select 3 that describe you)
+
+    academics
+
+    administrative
+
+    advocacy
+
+    bilingual
+
+    business management
+
+    clerical
+
+    coaching
+
+    communications
+
+    computers
+
+    design & graphic arts
+
+    electrical
+
+    finance
+
+    fund raising
+
+    engineering
+
+    food services
+
+    event management
+
+    health care
+
+    hobbies and crafts
+
+    human resources
+
+    IT infrastructure
+
+    landscaping
+
+    legal
+
+    logistics
+
+    marketing
+
+    music
+
+    non-profit development
+
+    performing arts
+
+    plumbing
+
+    strategic planning
+
+    social services
+
+    software development
+
+    trades
+
+    tutor
+
+    web developmentFirst Time Creation:
+
+Submittal Process (Series of Questions):
+
+Questions unknown yet to qualify someone of being able to create eventCreated Event/Creating Opportunity:
+
+Opportunity Title
+
+Opportunity Description
+
+Date(s) Active
+
+Start Time
+
+End Time
+
+Location
+
+Number of Volunteers
+
+Volunteers that will be designated leaders
+
+Outdoor/Indoor/Both Option
+
+Uploaded Photo/Chosen Photo from Repository we offerCalendar:
+
+Dates Available based on Personal Schedule (unless chosen to skip)
+
+Highlighted Current Date
+
+Opportunities User will be volunteering in List
+
+Opportunities User has created List
+
+(If it’s YOUR Event you should have a QR Reader)
+
+Scanner Pop Ups Available Here, along with info of who you can go to to scan the QRTeam Data:
+
+- Team Photos
+
+- Team Name
+
+- Short Description for Team
+
+- Total Number in the Team
+
+- Search bar for Team
+
+- Who the Organizer is
+
+- Who is in the Team
+
+- Team Stats:
+
+How many hours accumulated
+
+How many events participated
+
+Estimated Money Raised??
+
+- Team History of Events
+
+- Report FunctionNotifications:
+
+Event Details Changed (Anything from list above)
+
+Upcoming Events
+
+Personalized Message Pop Up Once Event Complete (thank you message)
+
+Those who joined your event (If more than one, instagram it)
+
+Those who leave your event Personal Account:
+
+- Everything from “Create Account” Process able to edit
+
+- Personal Statistics;
+
+   - How many hours volunteered
+
+   - Total Numbers of Opportunities gone to
+
+   - How many events organized
+
+   - Estimated money raised
+
+Settings:
+
+- Notifications on/off
+
+- Support
+
+- Report a problem
+
+- Policies/Agreements accessible
+
+- Log Out

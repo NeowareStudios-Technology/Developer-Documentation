@@ -3,39 +3,52 @@ ConnectEd DataStore Design Docs
 ****************************************************************************************
 CHANGES:
 
--under "UserProfile" Entity 
+-"UserProfile" Entity 
 	-"f_events" (future events),"p_events" (past events), and "c_events" (created events) added
--under "Event" Entity (or "Created Event/Creating Opportunity") 
+-"Event" Entity (or "Created Event/Creating Opportunity") 
 	-changed "Start Time" to "start_times" (list)
 	-changed "End Time" to "end_times" (list)
 	-added "address"
 	-"location" refers to GPS location
+-"Team" Entity
+	-added "h_attended", which is the number of team members attended corresponding to a "h_event" indexed event
+
 
 ****************************************************************************************
 REQUIREMENTS/NOTES:
 
--under "UserProfile" Entity
-	-"f_events" must be keys of events user will be attending
-	-"p_events" must be keys of events user has attended
-	-"c_events" must be keys of events user has created
-	-value for "u_photo" is the name of a Cloud Storage file representing the user photo
--under "Event" Entity
+-"UserProfile" Entity
+	-"f_events" must be key names of events (<userEmail>_<eventTitle>) user will be attending
+	-"p_events" must be key names of events user has attended
+	-"c_events" must be key names of events user has created
+	-"u_photo" = name of a Cloud Storage file representing the user photo
+-"Event" Entity
 	-for "env" property, choices "o, i, b" correspond to "out, in, both"
 	-all values for "dates_active", "start_times", and "end_times" must have all associated data at same index
-	-all key values for "leaders" must be existing user keys
-	-value for "e_photo" is the name of a Cloud Storage file representing the event photo
+	-all key name values for "leaders" must represent existing user keys
+	-"e_photo" = name of a Cloud Storage file representing the event photo
+-"Team" Entity
+	-"h_events" = array of events, given by event key name, that team has attended
+	-"h_hours" = array of hours that team has attended each event 
+	-indexes of "h_hours" and "h_attended" must match corresponding index of event in "h_events"
 ****************************************************************************************
+
+SINCE DATASTORE DATA IS ENCRYPTED, NO NEED TO ENCRYPT PASSWORD
 
 
 QR CODE IS SAVED IN EVENT ENTITY
 
 USING KEY PROPERTY FOR C_EVENTS,ETC RELIES ON SAVING ALL EVENTS FOREVER
 
+USING STRING PROP INSTEAD OF KEY PROP FOR READABILITY OF DB DATA (ANALYTICS)
+
+HIGH-WRITE PROPERTIES HAVE BEEN SEPARATED FROM LOW-WRITE PROPERTIES PER ENTITY
+
 
 ****************************************************************************************
 
 QUESTIONS:
-1) What is Personal Schedule?
+1) What is Personal Schedule?- asking Manny(7/16/18) - resolved: only a filter property
 2) Should "event description" under "Event" be required?
 3) Should "dates active" under "Event" be required?
 4) Should "address" under "Event" be required?
