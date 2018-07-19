@@ -58,6 +58,6 @@ Notes for future:
 
 QUESTIONS:
 1) What is Personal Schedule?- asking Manny(7/16/18) - resolved: only a filter property
-2) How will the user be referenced in th app? Username, Email, real name?
+2) How will the user be referenced in th app? Username, Email, real name? - asking Manny (7/19/18) - resolved: real name
 
 
