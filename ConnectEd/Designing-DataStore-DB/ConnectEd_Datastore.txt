@@ -50,8 +50,14 @@ HIGH-WRITE PROPERTIES HAVE BEEN SEPARATED FROM LOW-WRITE PROPERTIES PER ENTITY
 
 
 ****************************************************************************************
+Notes for future:
+1)Event tags
+	-1 required skill tag, no cap on tags
+	-1 required interest tag, no cap on tags
+	-1 required eduction tag, 1 tag limit
 
 QUESTIONS:
 1) What is Personal Schedule?- asking Manny(7/16/18) - resolved: only a filter property
+2) How will the user be referenced in th app? Username, Email, real name?
 
 
