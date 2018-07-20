@@ -1,0 +1,2 @@
+partial test searches with Datastore
+https://stackoverflow.com/questions/41525165/google-datastore-partial-string-matching

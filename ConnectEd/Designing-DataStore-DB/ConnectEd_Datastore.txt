@@ -38,6 +38,8 @@ REQUIREMENTS/NOTES:
 	-indexes of "h_hours" and "h_attended" must match corresponding index of event in "h_events"
 ****************************************************************************************
 
+ALL PROPERTIES ENDING IN "INDEX" ARE LOWER CASE ARRAY VERSIONS USED FOR SINGLE WORD SEARCH
+
 WILL BE USING auth0 API FOR LOGIN (NO PASSWORD ON OUR END)
 
 QR CODE IS SAVED IN EVENT ENTITY

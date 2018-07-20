@@ -1,0 +1,105 @@
+*********************************Login**************************************
+1) button: facebook login
+2) button: email login
+	-form: email, password
+3) button: sign up
+
+{auth0}
+
+
+*********************************Sign Up************************************
+1) form: email
+2) form: password
+3) form: password
+4) form: picture
+5) form button: Mon-Sun
+6) form button: AM, PM, EVE
+
+
+********************************Explore***************************************
+screen 1: event list
+	show: 
+		event pic
+		event title
+		event distance from user
+		event date	
+		event attendees (n/n)
+		event time
+		event environment
+		event tag match with user interest tag
+
+screen 2: event details
+	show:
+		event date
+		event title
+		event description
+		event attendees (n/n)
+		event time
+		event location
+	button:
+		volunteer (sign up for event)
+
+screen 2.1: event details (option 2?)
+	all information from "screen 2"
+	show:
+		tags
+
+screen 2.2: teams
+	show:
+		list of teams attending with pics, current capacity, and title
+
+
+screen 2.3: event updates 
+	show:
+		update post (text)
+		update date
+		update time
+		organizer name
+		organizer picture
+		leader names
+		leader pictures
+
+screen 3: search events
+	form:
+		tag/keyword/title (search item)
+	show:
+		list of events
+			event title
+			event distance from user
+			event date
+
+screen 4: filter events (for search)
+	form:
+		button: indoor, outdoor, both
+		button: distance away (0-100 miles)
+		button: date available [one or many dates?]
+	button:
+		apply
+
+
+*****************************Create Event***********************************
+form:
+	interest tags [5?]
+	skill tags [5?]
+	education tag
+	all event data
+	event leaders [usernames/real names/emails?]
+	photo
+	
+
+*****************************Calendar***********************************
+show: 
+	future/past event dates 
+	event title
+	event qr code
+	event picture
+
+
+*****************************Create Event***********************************
+
+
+
+
+	
+
+	

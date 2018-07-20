@@ -1,0 +1,191 @@
+*********************************Login**************************************
+------------------------------------------------------------------------------	
+LOG IN TO PROFILE
+
+./auth
+
+POST (might not be needed for auth0, need to research)
+	JSON request body: 
+		user email
+		password   (might not be needed for auth0)
+
+	logic:
+		check if user has account
+		return whether user was able to be logged in 
+
+	db source: 
+		auth0 3rd party authentication 
+
+	response: 
+		response code
+------------------------------------------------------------------------------	
+(auth0)
+
+*********************************Sign Up************************************
+------------------------------------------------------------------------------	
+CREATE NEW PROFILE
+
+./user
+
+POST 
+	JSON request body: 
+		email
+		password
+		picture
+		{choices} monday, tueday, wednesday, thursday, friday, saturday, sunday
+		{choices} AM, PM, EVE
+	
+	logic: 
+		create user account
+		return whether user account was able to be created
+
+	db source: 
+		User_Prof entity	
+
+	response: 
+		response code
+------------------------------------------------------------------------------	
+	
+********************************Explore***************************************
+screen 1: event list
+------------------------------------------------------------------------------	
+GET EVENTS IN SPECIFIED USER RADIUS
+
+./events/{user_specifier}?{user_location}&{user_radius}
+GET
+	
+	logic:
+		make list of Event entity objects within specified {user_radius} of {user_location}
+		get list of interest tags from User_Prof entity
+		place Event entity objects with tags that match {user} insterest tags at front of list
+		convert Event entity objects list to JSON
+		return JSON of Events with their properties
+
+	db source:
+		User_Prof entity
+		all Event entities
+
+	response:
+		response code
+		JSON of Event properties for each Event
+			[
+			(Event 1
+				event pic
+				event title
+				event distance from user
+				event date	
+				event attendees (n/n)
+				event time
+				event environment
+				event tag match with user interest tag
+				)
+			(Event 2....)
+			]
+------------------------------------------------------------------------------	
+			
+			
+	
+screen 2: event details
+------------------------------------------------------------------------------	
+GET SPECIFIED EVENT DETAILS
+	
+./events/{event_specifier}
+	
+GET
+		
+	logic:
+		convert Event entity object into JSON
+		add additional properties from E_Roster child entity of Event entity to JSON
+		return Event properties JSON for specified Event
+
+	db source: 
+		Event entity
+
+	response:
+		response code
+		Event properties JSON for especified event 
+			[event date
+			event title
+			event tags?
+			event description
+			event attendees (n/n)
+			event time
+			event location]
+------------------------------------------------------------------------------			
+SIGN SPECIFIED USER UP FOR SPECIFIED EVENT	
+	
+./events/{event_specifier}/{user_specifier}
+	
+PUT
+		
+	JSON request body:
+		add or remove user from event
+		
+	logic:
+		depending on JSON body, add or remove user from event
+		add or remove event from User_Prof "f_events" property
+		return whether User was succesfullt signed up for/ removed from event
+
+	db source:
+		User_Prof entity
+		Event entity
+
+	response:
+		response code
+------------------------------------------------------------------------------	
+screen 2.2: Teams		
+------------------------------------------------------------------------------	
+GET INFO OF TEAMS SIGNED UP FOR A SPECIFIED EVENT
+
+./events/{event_specifier}/teams
+
+GET
+	logic: 
+		get list of Team entity objects from E_Roster child entity of Event entity
+		convert Team entity object list to JSON 
+		return Team entity JSON
+
+	db source:
+		E_Roster entity that is child of Event entity
+		Team entity for each Team in Event Roster
+
+	response:
+		response code
+		Team entity JSON
+------------------------------------------------------------------------------	
+screen 2.3: Event Updates
+------------------------------------------------------------------------------	
+GET UPDATES FOR SPECIFIED EVENT
+
+./events/{event_specifier}/updates
+
+GET
+	logic:
+		get list of Update entity objects for each index in "updates" property of E_Updates entity of Event entity
+		convert list of Update entity objects to JSON
+		return Update entity JSON
+	response:
+		response code
+		Update entity JSON
+------------------------------------------------------------------------------	
+SEARCH FOR EVENTS BY KEYWORD
+
+./events/search/{keyword}
+
+GET
+	logic:
+		get list of Event entity objects (LIST A) whose name (partially or fully) matches keyword
+			OR of which any interest_tags matches keyword
+			OR of which any skill_tag matches keyword
+			OR whose education_tag matches keyword
+			AND environment preference
+			AND distance preference
+			AND availability preference
+		filter list by location radius
+		convert list to JSON
+		return list
+
+
+	
+
+	
