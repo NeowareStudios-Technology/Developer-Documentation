@@ -14,6 +14,9 @@
 4) form: picture
 5) form button: Mon-Sun
 6) form button: AM, PM, EVE
+7) form buttons: interest tags
+8) form buttons: skill tags
+9) form button: edu tag
 
 
 ********************************Explore***************************************
@@ -95,8 +98,20 @@ show:
 	event picture
 
 
-*****************************Create Event***********************************
+*****************************Teams***********************************
+show:
+	list of teams (by distance from user [using team last event location])
+	team details
+form:
+	create team
 
+*****************************Profile***********************************
+show:
+	profile info
+	profile history info
+	notifactions related to user events made/attending
+
+	
 
 
 

@@ -55,9 +55,7 @@ GET EVENTS IN SPECIFIED USER RADIUS
 GET
 	
 	logic:
-		make list of Event entity objects within specified {user_radius} of {user_location}
-		get list of interest tags from User_Prof entity
-		place Event entity objects with tags that match {user} insterest tags at front of list
+		make list of closest Event entity objects within specified {user_radius} of {user_location} (at most 10)
 		convert Event entity objects list to JSON
 		return JSON of Events with their properties
 
@@ -68,7 +66,7 @@ GET
 	response:
 		response code
 		JSON of Event properties for each Event
-			[
+			{
 			(Event 1
 				event pic
 				event title
@@ -80,11 +78,72 @@ GET
 				event tag match with user interest tag
 				)
 			(Event 2....)
-			]
+			}
 ------------------------------------------------------------------------------	
-			
-			
+GET EVENTS IN USER STATE
+
+./events/{user_specifier}
+GET
 	
+	logic:
+		make list of Event entity objects within specified user's state (e.g. Florida) (at most 20)
+		convert Event entity objects list to JSON
+		return JSON of Events with their properties
+
+	db source:
+		User_Prof entity
+		all Event entities
+
+	response:
+		response code
+		JSON of Event properties for each Event
+			{
+			(Event 1
+				event pic
+				event title
+				event distance from user
+				event date	
+				event attendees (n/n)
+				event time
+				event environment
+				event tag match with user interest tag
+				)
+			(Event 2....)
+			}
+			
+------------------------------------------------------------------------------	
+GET ALL EVENTS
+
+./events
+GET
+	
+	logic:
+		make list of all Event entity objects (at most 100)
+		convert Event entity objects list to JSON
+		return JSON of Events with their properties
+
+	db source:
+		User_Prof entity
+		all Event entities
+
+	response:
+		response code
+		JSON of Event properties for each Event
+			{
+			(Event 1
+				event pic
+				event title
+				event distance from user
+				event date	
+				event attendees (n/n)
+				event time
+				event environment
+				event tag match with user interest tag
+				)
+			(Event 2....)
+			}
+			
+------------------------------------------------------------------------------		
 screen 2: event details
 ------------------------------------------------------------------------------	
 GET SPECIFIED EVENT DETAILS
@@ -104,13 +163,14 @@ GET
 	response:
 		response code
 		Event properties JSON for especified event 
-			[event date
+			{event date
 			event title
 			event tags?
 			event description
-			event attendees (n/n)
+			event attendees 
+			event capacity
 			event time
-			event location]
+			event location}
 ------------------------------------------------------------------------------			
 SIGN SPECIFIED USER UP FOR SPECIFIED EVENT	
 	
@@ -132,6 +192,32 @@ PUT
 
 	response:
 		response code
+
+------------------------------------------------------------------------------	
+GET SPECIFIED EVENT ATTENDEES
+	
+./events/{event_specifier}/attendees
+	
+GET
+		
+	logic:
+		query for E_Roster entity that is child of Event entity
+		for each "attendees" string (user specifier), add it to a list
+		create dictionary to hold users (attendees)
+		use attendees list to query for attendees whose user specifier matches user specifier listed in "attendees"property
+		add each matched user to attendees dictionary
+		return attendees JSON for specified Event
+
+	db source: 
+		E_Roster child entity of Event entity
+		Event entity
+		all User_Prof entities
+
+	response:
+		response code
+		attendees JSON for especified event 
+			{"user1": user_info, "user2": .....}
+			
 ------------------------------------------------------------------------------	
 screen 2.2: Teams		
 ------------------------------------------------------------------------------	
@@ -168,6 +254,7 @@ GET
 		response code
 		Update entity JSON
 ------------------------------------------------------------------------------	
+**************************DO NOT USE (too much backend)*********************
 SEARCH FOR EVENTS BY KEYWORD
 
 ./events/search/{keyword}
@@ -184,8 +271,7 @@ GET
 		filter list by location radius
 		convert list to JSON
 		return list
-
-
+****************************************************************************
 	
 
 	
