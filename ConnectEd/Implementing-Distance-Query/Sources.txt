@@ -1,0 +1,2 @@
+example of using haversines formula for small datasets
+https://stackoverflow.com/questions/23672092/query-by-distance-between-two-objects-without-using-oracle-spatial-functionality
