@@ -18,9 +18,7 @@ CHANGES:
 REQUIREMENTS/NOTES:
 
 -"UserProfile" Entity
-	-"f_events" must be key names of events (<userEmail>_<eventTitle>) user will be attending
-	-"p_events" must be key names of events user has attended
-	-"c_events" must be key names of events user has created
+	-"events" must be key names of events (<userEmail>_<eventTitle>) user will be attending, has attended, or has created
 	-"u_photo" = name of a Cloud Storage file representing the user photo
 -"Event" Entity
 	-for "env" property, choices "o, i, b" correspond to "out, in, both"
