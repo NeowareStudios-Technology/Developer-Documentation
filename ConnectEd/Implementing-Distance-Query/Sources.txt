@@ -1,2 +1,5 @@
+example of validating form info for query
+https://classroom.udacity.com/courses/ud858/lessons/3839678726/concepts/39598188070923
+
 example of using haversines formula for small datasets
 https://stackoverflow.com/questions/23672092/query-by-distance-between-two-objects-without-using-oracle-spatial-functionality
