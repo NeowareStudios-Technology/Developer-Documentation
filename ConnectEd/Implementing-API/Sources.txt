@@ -1,0 +1,12 @@
+-getting started
+https://cloud.google.com/endpoints/docs/frameworks/python/get-started-frameworks-python
+
+1)-adding API management (generating OpenApi doc)
+https://cloud.google.com/endpoints/docs/frameworks/python/adding-api-management
+
+2)-generating API document
+https://cloud.google.com/endpoints/docs/frameworks/python/test-deploy#generating_and_deploying_an_api_configuration_file
+
+3)-deploying API
+https://cloud.google.com/endpoints/docs/frameworks/python/test-deploy
+

@@ -3,3 +3,10 @@ https://classroom.udacity.com/courses/ud858/lessons/3839678726/concepts/39598188
 
 example of using haversines formula for small datasets
 https://stackoverflow.com/questions/23672092/query-by-distance-between-two-objects-without-using-oracle-spatial-functionality
+
+tutorial using Google API for distance search
+https://cloud.google.com/appengine/training/fts_intro/
+
+why use GeoPtProperty? (location based search)
+https://stackoverflow.com/questions/15222495/what-kind-of-advantages-does-geoptproperty-have
+

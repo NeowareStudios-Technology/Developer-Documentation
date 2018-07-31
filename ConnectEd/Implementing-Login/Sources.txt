@@ -6,3 +6,13 @@ https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine
 
 -Auth0 Universal Login
 https://auth0.com/docs/hosted-pages/login
+
+-authenticating users with auth0 and cloud endpoints
+https://cloud.google.com/endpoints/docs/frameworks/python/authenticating-users
+https://cloud.google.com/endpoints/docs/frameworks/python/authenticating-users#authenticating_with_auth0
+
+-auth0 console
+https://manage.auth0.com/#/
+
+-autho0 docs
+https://auth0.com/docs/api/authentication#authenticate-user

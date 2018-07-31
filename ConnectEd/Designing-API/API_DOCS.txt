@@ -1,0 +1,288 @@
+**************************************************************************************
+***********************************Create Profile*************************************
+**************************************************************************************
+
+POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+request body:
+{
+"first_name":"string",
+"last_name":"string",
+"email":"string",
+"passwrd":"string",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"skills":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": true,
+"time_day": "a"
+}
+
+required fields:
+-email
+-passwrd
+-first_name
+-last_name
+-lat
+-lon
+-education
+
+notes: 
+-"time_day" must be either a, p, or e
+- all days of the week set to True if not specified
+- user photo is uploaded with Edit Profile API call
+
+
+**************************************************************************************
+***********************************Edit Profile*************************************
+**************************************************************************************
+
+PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<user_email>
+
+request body:
+{
+"email":"string",
+"passwrd":"string",
+"first_name":"string",
+"last_name":"string",
+"education":"string",
+"skills":
+[
+"string",
+"string"
+],
+"interests":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": bool,
+"time_day":"string",
+"photo": "byte_string"
+}
+
+
+required fields:
+-email
+-passwrd
+
+notes: 
+-"time_day" must be "a", "e", or "p"
+-all days of the week set to true if not specified
+-aside from email and passwrd, you only need to pass fields you want to edit
+
+
+**************************************************************************************
+***********************************Delete Profile*************************************
+**************************************************************************************
+
+DELETE https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<user_email>?passwrd=<user_password>
+
+URL Query String:
+?passwrd=<user_password>
+
+
+required fields:
+-email
+-passwrd
+
+notes: 
+-this function will be changed to not have password in URL when auth0 incorporated
+
+
+
+
+**************************************************************************************
+*************************************Create Event*************************************
+**************************************************************************************
+
+POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
+
+request body:
+{
+"email":"string",
+"passwrd":"string",
+"e_title":"string",
+"e_desc":"string",
+"e_organizer":"string",
+"e_photo":"string",
+"capacity":"int",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"req_skills":
+[
+"string",
+"string"
+],
+"street":"string",
+"city":"string",
+"state":"string",
+"zip_code":"string",
+"e_lat": float,
+"e_lon": float,
+"env":"string",
+"date":
+[
+"string",
+"string"
+],
+"day":
+[
+"string",
+"string"
+],
+"start":
+[
+"string",
+"string"
+],
+"end":
+[
+"string",
+"string"
+],
+"privacy":"string",
+"qr":"string"
+}
+
+required fields:
+-email
+-passwrd
+-e_title
+-e_organizer
+-street
+-city
+-state
+-env
+-privacy
+-zip code
+
+notes: 
+-"e_title" is unique per user (a user can't create 2 events of the same name)
+-"env" must be o, i or b
+-"privacy" must be o or p
+-date string format: "%Y-%m-%d"
+-time string format: "%H:%M"
+
+
+**************************************************************************************
+*************************************Edit Event*************************************
+**************************************************************************************
+
+PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
+
+request body:
+{
+"email":"string",
+"passwrd":"string",
+"e_title":"string",
+"e_desc":"string",
+"e_organizer":"string",
+"e_photo":"byte_string",
+"capacity":"int",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"req_skills":
+[
+"string",
+"string"
+],
+"street":"string",
+"city":"string",
+"state":"string",
+"zip_code":"string",
+"e_lat": float,
+"e_lon": float,
+"env":"string",
+"date":
+[
+"string",
+"string"
+],
+"day":
+[
+"string",
+"string"
+],
+"start":
+[
+"string",
+"string"
+],
+"end":
+[
+"string",
+"string"
+],
+"privacy":"string",
+"qr":"byte_string"
+}
+
+required fields:
+-email
+-passwrd
+-e_organizer
+-e_orig_title
+
+notes: 
+-"e_title" is unique per user (a user can't create 2 events of the same name)
+-"env" must be o, i or b
+-"privacy" must be o or p
+-date string format: "%Y-%m-%d"
+-time string format: "%H:%M"
+-you only need to provide fields that you wish to edit
+
+
+**************************************************************************************
+*************************************Delete Event*************************************
+**************************************************************************************
+DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<original_event_name>?email=<user_email>&passwrd=<user_password>&creator_email=<event_creator_email>
+
+
+URL Query String:
+?email=<user_email>&passwrd=<user_password>&creator_email=<event_creator_email>
+
+required fields:
+-email
+-passwrd
+-creator_email
+-url_event_orig_name 
+
+notes: 
+-user must be event creator to delete
+-this function will be changed to not have password in URL when auth0 incorporated
+
+
+
+
