@@ -1,0 +1,488 @@
+**************************************************************************************
+***********************************Create Profile*************************************
+**************************************************************************************
+
+POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+json request body:
+{
+"first_name":"string",
+"last_name":"string",
+"email":"string",
+"passwrd":"string",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"skills":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": true,
+"time_day": "string",
+"photo": "byte_string"
+}
+
+required fields:
+-email
+-passwrd
+-first_name
+-last_name
+-lat
+-lon
+-education
+
+notes: 
+- all days of the week set to True if not specified
+
+
+**************************************************************************************
+**************************************Get Profile*************************************
+**************************************************************************************
+
+GET https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<email_of_prof>?passwrd=<user_password>&email=<user_email>
+
+URL:
+.../<email_of_prof>...
+
+URL Query String:
+?passwrd=<user_password>&email=<user_email>
+
+required fields:
+-user_email
+-passwrd
+-email_of_prof
+
+
+
+**************************************************************************************
+***********************************Edit Profile***************************************
+**************************************************************************************
+
+PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+json request body:
+{
+"email":"string",
+"passwrd":"string",
+"first_name":"string",
+"last_name":"string",
+"education":"string",
+"skills":
+[
+"string",
+"string"
+],
+"interests":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": bool,
+"time_day":"string",
+"photo": "byte_string"
+}
+
+
+required fields:
+-email
+-passwrd
+
+notes: 
+-all days of the week set to true if not specified
+-aside from email and passwrd, you only need to pass fields you want to edit
+
+
+**************************************************************************************
+***********************************Delete Profile*************************************
+**************************************************************************************
+
+DELETE https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<user_email>?passwrd=<user_password>
+
+
+URL:
+.../<user_email>...
+
+URL Query String:
+?passwrd=<user_password>
+
+
+required fields:
+-email
+-passwrd
+
+notes: 
+-this function will be changed to not have password in URL when auth0 incorporated
+
+
+
+
+**************************************************************************************
+*************************************Create Event*************************************
+**************************************************************************************
+
+POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
+
+json request body:
+{
+"email":"string",
+"passwrd":"string",
+"e_title":"string",
+"e_desc":"string",
+"e_organizer":"string",
+"e_photo":"string",
+"capacity":"int",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"req_skills":
+[
+"string",
+"string"
+],
+"street":"string",
+"city":"string",
+"state":"string",
+"zip_code":"string",
+"e_lat": float,
+"e_lon": float,
+"env":"string",
+"date":
+[
+"string",
+"string"
+],
+"day":
+[
+"string",
+"string"
+],
+"start":
+[
+"string",
+"string"
+],
+"end":
+[
+"string",
+"string"
+],
+"privacy":"string",
+"qr":"string"
+}
+
+required fields:
+-email
+-passwrd
+-e_title
+-e_organizer
+-street
+-city
+-state
+-env
+-privacy
+-zip code
+
+notes: 
+-"e_title" is unique per user (a user can't create 2 events of the same name)
+-"env" must be o, i or b
+-"privacy" must be o or p
+-date string format: "%Y-%m-%d"
+-time string format: "%H:%M"
+
+
+**************************************************************************************
+**************************************Get Event***************************************
+**************************************************************************************
+
+GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/teams/<organizer_email>/<original_event_name>
+
+URL:
+.../<organizer_email>/<original_event_name>
+
+required fields:
+-organizer_email
+-original_event_name
+
+
+**************************************************************************************
+*****************************Get Events within Radius*********************************
+**************************************************************************************
+
+GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/prefill
+
+notes:
+-uses saved radius of profile 
+-list of distances returned will match indices with list of event IDs returned
+-event IDs returned can easily be used in get event requests as they are in URL form
+
+
+**************************************************************************************
+*************************************Edit Event*************************************
+**************************************************************************************
+
+PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
+
+json request body:
+{
+"email":"string",
+"passwrd":"string",
+"e_title":"string",
+"e_desc":"string",
+"e_organizer":"string",
+"e_photo":"byte_string",
+"capacity":"int",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"req_skills":
+[
+"string",
+"string"
+],
+"street":"string",
+"city":"string",
+"state":"string",
+"zip_code":"string",
+"e_lat": float,
+"e_lon": float,
+"env":"string",
+"date":
+[
+"string",
+"string"
+],
+"day":
+[
+"string",
+"string"
+],
+"start":
+[
+"string",
+"string"
+],
+"end":
+[
+"string",
+"string"
+],
+"privacy":"string",
+"qr":"byte_string"
+}
+
+required fields:
+-email
+-passwrd
+-e_organizer
+-e_orig_title
+
+notes: 
+-"e_title" is unique per user (a user can't create 2 events of the same name)
+-"env" must be o, i or b
+-"privacy" must be o or p
+-date string format: "%Y-%m-%d"
+-time string format: "%H:%M"
+-you only need to provide fields that you wish to edit
+
+
+**************************************************************************************
+*************************************Delete Event*************************************
+**************************************************************************************
+DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<e_organizer_email>/<url_original_event_name>?email=<user_email>&passwrd=<user_password>
+
+
+URL:
+.../<e_organizer_email>/<url_original_event_name>...
+
+URL Query String:
+?email=<user_email>&passwrd=<user_password>
+
+required fields:
+-email
+-passwrd
+-creator_email
+-url_event_orig_name 
+
+notes: 
+-user must be event creator to delete
+-this function will be changed to not have password in URL when auth0 incorporated
+
+
+**************************************************************************************
+*******************************Add Leaders to Event***********************************
+**************************************************************************************
+
+PUT  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<e_organizer_email>/<original_event_name>
+
+
+URL:
+.../<e_organizer_email>/<original_event_name>
+
+
+json request body:
+{
+"email":"string",
+"leaders":
+[
+"string",
+"string"
+],
+"passwrd":"string",
+}
+
+
+required fields:
+	url:
+		-e_organizer_email
+		-original_event_name
+	JSON request body:
+		-email
+		-passwrd
+
+notes: 
+-leaders must be unique
+-user adding leaders must be event organizer
+
+
+
+**************************************************************************************
+*****************************Delete Leaders from Event**********************************
+**************************************************************************************
+
+DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<e_organizer_email>/<original_event_name>/leaders?email=<user_email>&passwrd=<user_password>&leaders=<leader_email>&leaders=<leader_email>....
+
+URL:
+.../<e_organizer_email>/<original_event_name>/...
+
+URL Query String:
+?email=<user_email>&passwrd=<user_password>&leaders=<leader_email>&leaders=<leader_email>....
+
+
+required fields:
+-e_organizer_email
+-original_event_name
+-user_email
+-user_password
+
+
+
+**************************************************************************************
+************************************Create Team***************************************
+**************************************************************************************
+
+POST  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/team
+
+JSON Request Body:
+{
+"email":"string",
+"passwrd":"string",
+"t_name":"string",
+"t_capacity":"string",
+"t_desc":"string",
+"t_photo":"byte_string"
+}
+
+required fields:
+-email
+-passwrd
+-t_name
+
+notes: 
+-"t_name" must be unique
+
+
+
+**************************************************************************************
+************************************Delete Team***************************************
+**************************************************************************************
+
+DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/teams/<original_team_name>?email=<user_email>&passwrd=<user_password>
+
+
+URL:
+.../<original_team_name>...
+
+URL Query String:
+?email=<user_email>&passwrd=<user_password>
+
+required fields:
+-email
+-passwrd
+-t_name
+
+notes: 
+-caller must be organizer of team to delete team
+
+
+
+**************************************************************************************
+**************************************Edit Team***************************************
+**************************************************************************************
+
+PUT  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/team
+
+JSON Request Body:
+{
+"email":"string",
+"passwrd":"string",
+"t_orig_name": "string",
+"t_name":"string",
+"t_capacity":"string",
+"t_desc":"string",
+"t_photo":"byte_string"
+}
+
+Required Fields:
+-email
+-passwrd
+-t_orig_name
+
+notes: 
+-"t_name" must be unique
+-"t_orig_name" is the teams original name which it was created under (this is how it is saved in db)
+
+
+**************************************************************************************
+**************************************Get Team****************************************
+**************************************************************************************
+
+GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/teams/<url_orig_team_name>?email=<user_email>&passwrd=<user_password>
+
+URL:
+.../<url_orig_team_name>/...
+
+URL Query String:
+?email=<user_email>&passwrd=<user_password>
+
+required fields:
+-email
+-passwrd
+-url_orig_team_name
+
+

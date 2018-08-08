@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "88ee6960-be13-4d34-bc5b-8e5f27d476e3",
+		"name": "connectED_API_DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "4f3bdfa9-0dda-4233-938c-3cfc8b1d61e0",
+			"name": "create profile1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "932ccee2-f378-4452-95b5-dc21bf067711",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\": \"lee@email.com\",\r\n \"passwrd\": \"password1!\",\r\n \"first_name\": \"Lee\",\r\n \"last_name\": \"Ramirez\",\r\n \"lat\": 10.39,\r\n \"lon\": 11.49,\r\n \"education\": \"College\",\r\n \"interests\": [\r\n  \"this interest\",\r\n  \"that interest\"\r\n ],\r\n \"skills\": [\r\n  \"this skill\",\r\n  \"that skill\"\r\n ],\r\n \"mon\": true,\r\n \"tue\": false,\r\n \"wed\": true,\r\n \"thu\": false,\r\n \"fri\": true,\r\n \"sat\": false,\r\n \"sun\": true,\r\n \"time_day\": \"a\",\r\n \"photo\": \"asjdafbjlaskbfljsbfb87o3rt4o8tg76i67i6@&^@&^&@&76g76gi367i&^@&^\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1539065e-a7bc-4a38-a2e9-0592b45b0c61",
+			"name": "create event1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "76d971fd-b1e5-44fc-af23-f8e0396f568f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"e_title\": \"postman event\",\r\n \"e_lat\": 10.4,\r\n \"e_lon\": 33.6,\r\n \"street\": \"test street 5493\",\r\n \"city\": \"Kissimmee\",\r\n \"state\": \"Florida\",\r\n \"zip_code\": \"48362\",\r\n \"capacity\": \"100\",\r\n \"e_desc\": \"This is a test event created by a Postman script\",\r\n \"interests\": [\r\n  \"this interest\",\r\n  \"that interest\"\r\n ],\r\n \"req_skills\": [\r\n  \"this skill\",\r\n  \"that skill\"\r\n ],\r\n \"education\": \"College\",\r\n \"privacy\": \"p\",\r\n \"env\": \"o\",\r\n \"start\": [\r\n  \"01:00\",\r\n  \"20:00\"\r\n ],\r\n \"end\": [\r\n  \"10:00\",\r\n  \"22:00\"\r\n ],\r\n \"date\": [\r\n  \"2018-08-02\",\r\n  \"2018-09-10\"\r\n ],\r\n \"day\": [\r\n  \"mon\",\r\n  \"tue\"\r\n ],\r\n \"email\": \"lee@email.com\",\r\n \"passwrd\": \"password1!\",\r\n \"qr\": \"jsldifbi374878b@&^$$T*@&#Tib348^*\",\r\n \"e_photo\": \"sdkjfbi87*B*&$G*iybw8f83748\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "dc440188-4daf-4636-9c59-8522b4502b65",
+			"name": "create team1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82c5c973-f23b-4ff7-ad31-ffdd530c4e72",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\": \"lee@email.com\",\r\n \"passwrd\": \"password1!\",\r\n \"t_name\": \"postman team\",\r\n \"t_capacity\": \"20\",\r\n \"t_desc\": \"this is a test team created by a postman script\",\r\n \"t_photo\": \"asdfkljbsiuaf378og8G*#G*&$Owe7f8787#*&*&g8gw8gf\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2520bc05-7e44-451d-9913-d49cf07cca53",
+			"name": "get profile1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1852ff6a-913e-4948-b924-6dfe0a8fff15",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/profiles/lee%40email.com?passwrd=password1!&email=lee%40email.com\n\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"profiles",
+						"lee%40email.com"
+					],
+					"query": [
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						},
+						{
+							"key": "email",
+							"value": "lee%40email.com\n\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "28b9acee-154c-40bd-8fda-fc2c136212a3",
+			"name": "get team1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c39a599b-b103-40e5-bccd-008dd06ba965",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/teams/postman%20team?email=lee%40email.com&passwrd=password1!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"teams",
+						"postman%20team"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "lee%40email.com"
+						},
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "37b62014-842c-4643-b342-fbfd98ca0907",
+			"name": "get event1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/events/lee%40email.com/postman%20event?email=lee%40email.com&passwrd=password1!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"events",
+						"lee%40email.com",
+						"postman%20event"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "lee%40email.com"
+						},
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5469a691-1fe0-4b52-b636-49d0bcfbaf61",
+			"name": "delete event1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1ac66e8-77a6-4d6c-9b41-c0f23efa9f98",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/events/lee%40email.com/postman%20event?email=lee%40email.com&passwrd=password1!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"events",
+						"lee%40email.com",
+						"postman%20event"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "lee%40email.com"
+						},
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ebf8e37c-f2f6-41cb-aeca-fa34375732b6",
+			"name": "delete team1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cdd8894e-4274-47c5-8921-cb25b90299eb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/teams/postman%20team?email=lee%40email.com&passwrd=password1!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"teams",
+						"postman%20team"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "lee%40email.com"
+						},
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "bee0712e-2012-4d05-b25a-43ec4010c328",
+			"name": "delete profile1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25246195-b26d-49da-ae1b-983f01c6fe3b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/_ah/api/connected/v1/profiles/lee%40email.com?passwrd=password1!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"_ah",
+						"api",
+						"connected",
+						"v1",
+						"profiles",
+						"lee%40email.com"
+					],
+					"query": [
+						{
+							"key": "passwrd",
+							"value": "password1!"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
