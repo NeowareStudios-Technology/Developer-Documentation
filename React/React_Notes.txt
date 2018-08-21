@@ -1,0 +1,19 @@
+Project: Alice Labs
+Topic: general (starter) react notes
+Created by: David Ramirez
+Date: 8/17/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+What is the basic concept?
+-ReactJS allows you to build re-usable components for your webpage using JS
+	-these components hold the html code and JS logic
+	-can update ui whenever, do not need to reach out to server to fetch view
+-used as "v" (view) in MVC patter (model-view-controller)
+-JS library for creating user interfaces
+
+React Native
+-React Native is a mobile framework that compiles to native app components, allowing you to build native mobile applications 
+(iOS, Android, and Windows) in JavaScript that allows you to use ReactJS to build your components, and implements ReactJS under the hood.
+
+

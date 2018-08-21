@@ -1,142 +1,4 @@
 **************************************************************************************
-***********************************Create Profile*************************************
-**************************************************************************************
-
-POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
-
-json request body:
-{
-"first_name":"string",
-"last_name":"string",
-"email":"string",
-"passwrd":"string",
-"education":"string",
-"interests":
-[
-"string",
-"string"
-],
-"skills":
-[
-"string",
-"string"
-],
-"lat": float,
-"lon": float,
-"mon": bool,
-"tue": bool,
-"wed": bool,
-"thu": bool,
-"fri": bool,
-"sat": bool,
-"sun": true,
-"time_day": "string",
-"photo": "byte_string"
-}
-
-required fields:
--email
--passwrd
--first_name
--last_name
--lat
--lon
--education
-
-notes: 
-- all days of the week set to True if not specified
-
-
-**************************************************************************************
-**************************************Get Profile*************************************
-**************************************************************************************
-
-GET https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<email_of_prof>?passwrd=<user_password>&email=<user_email>
-
-URL:
-.../<email_of_prof>...
-
-URL Query String:
-?passwrd=<user_password>&email=<user_email>
-
-required fields:
--user_email
--passwrd
--email_of_prof
-
-
-
-**************************************************************************************
-***********************************Edit Profile***************************************
-**************************************************************************************
-
-PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
-
-json request body:
-{
-"email":"string",
-"passwrd":"string",
-"first_name":"string",
-"last_name":"string",
-"education":"string",
-"skills":
-[
-"string",
-"string"
-],
-"interests":
-[
-"string",
-"string"
-],
-"lat": float,
-"lon": float,
-"mon": bool,
-"tue": bool,
-"wed": bool,
-"thu": bool,
-"fri": bool,
-"sat": bool,
-"sun": bool,
-"time_day":"string",
-"photo": "byte_string"
-}
-
-
-required fields:
--email
--passwrd
-
-notes: 
--all days of the week set to true if not specified
--aside from email and passwrd, you only need to pass fields you want to edit
-
-
-**************************************************************************************
-***********************************Delete Profile*************************************
-**************************************************************************************
-
-DELETE https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<user_email>?passwrd=<user_password>
-
-
-URL:
-.../<user_email>...
-
-URL Query String:
-?passwrd=<user_password>
-
-
-required fields:
--email
--passwrd
-
-notes: 
--this function will be changed to not have password in URL when auth0 incorporated
-
-
-
-
-**************************************************************************************
 *************************************Create Event*************************************
 **************************************************************************************
 
@@ -144,8 +6,6 @@ POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
 
 json request body:
 {
-"email":"string",
-"passwrd":"string",
 "e_title":"string",
 "e_desc":"string",
 "e_organizer":"string",
@@ -194,8 +54,6 @@ json request body:
 }
 
 required fields:
--email
--passwrd
 -e_title
 -e_organizer
 -street
@@ -206,6 +64,7 @@ required fields:
 -zip code
 
 notes: 
+-user must be signed in
 -"e_title" is unique per user (a user can't create 2 events of the same name)
 -"env" must be o, i or b
 -"privacy" must be o or p
@@ -226,6 +85,9 @@ required fields:
 -organizer_email
 -original_event_name
 
+notes:
+-user must be logged in
+
 
 **************************************************************************************
 *****************************Get Events within Radius*********************************
@@ -234,6 +96,7 @@ required fields:
 GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/prefill
 
 notes:
+-user must be signed in
 -uses saved radius of profile 
 -list of distances returned will match indices with list of event IDs returned
 -event IDs returned can easily be used in get event requests as they are in URL form
@@ -247,11 +110,9 @@ PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events
 
 json request body:
 {
-"email":"string",
-"passwrd":"string",
+"e_orig_title":"string",
 "e_title":"string",
 "e_desc":"string",
-"e_organizer":"string",
 "e_photo":"byte_string",
 "capacity":"int",
 "education":"string",
@@ -297,12 +158,10 @@ json request body:
 }
 
 required fields:
--email
--passwrd
--e_organizer
 -e_orig_title
 
 notes: 
+-user must be logged in 
 -"e_title" is unique per user (a user can't create 2 events of the same name)
 -"env" must be o, i or b
 -"privacy" must be o or p
@@ -314,19 +173,13 @@ notes:
 **************************************************************************************
 *************************************Delete Event*************************************
 **************************************************************************************
-DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<e_organizer_email>/<url_original_event_name>?email=<user_email>&passwrd=<user_password>
+DELETE  https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/events/<url_original_event_name>
 
 
 URL:
-.../<e_organizer_email>/<url_original_event_name>...
-
-URL Query String:
-?email=<user_email>&passwrd=<user_password>
+.../<url_original_event_name>
 
 required fields:
--email
--passwrd
--creator_email
 -url_event_orig_name 
 
 notes: 
@@ -472,10 +325,10 @@ notes:
 **************************************Get Team****************************************
 **************************************************************************************
 
-GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/teams/<url_orig_team_name>?email=<user_email>&passwrd=<user_password>
+GET   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/teams/<original_team_name>?email=<user_email>&passwrd=<user_password>
 
 URL:
-.../<url_orig_team_name>/...
+.../<original_team_name>/...
 
 URL Query String:
 ?email=<user_email>&passwrd=<user_password>
@@ -483,6 +336,170 @@ URL Query String:
 required fields:
 -email
 -passwrd
--url_orig_team_name
+-original_team_name
+
+
+
+
+
+
+
+
+
+THE FOLLOWING ENDPOINTS HAVE BEEN UPDATED FOR 3RD PARTY AUTHENTICATION (i.e. using user object for email):
+
+
+
+
+
+
+
+
+
+**************************************************************************************
+********************************Register For Event************************************
+**************************************************************************************
+
+PUT   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v4.4.0/events/<organizer_email>/<original_event_name>/registration
+
+URL:
+.../<organizer_email>/<url_orig_team_name>/...
+
+required fields:
+-oganizer_email
+-original_event_name
+
+
+**************************************************************************************
+********************************Deregister For Event**********************************
+**************************************************************************************
+
+DELETE   https://fleet-fortress-211105.appspot.com/_ah/api/connected/v4.4.0/events/<organizer_email>/<original_event_name>/registration
+
+URL:
+.../<organizer_email>/<url_orig_team_name>/...
+
+required fields:
+-oganizer_email
+-original_event_name
+
+
+**************************************************************************************
+***********************************Create Profile*************************************
+**************************************************************************************
+
+POST https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+json request body:
+{
+"first_name":"string",
+"last_name":"string",
+"education":"string",
+"interests":
+[
+"string",
+"string"
+],
+"skills":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": true,
+"time_day": "string",
+"photo": "byte_string"
+}
+
+required fields:
+-first_name
+-last_name
+-lat
+-lon
+-education
+
+notes: 
+- all days of the week set to True if not specified
+
+
+**************************************************************************************
+**************************************Get Profile*************************************
+**************************************************************************************
+
+GET https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles/<email_of_prof>
+
+URL:
+.../<email_of_prof>
+
+
+required fields:
+-email_of_prof
+
+-returns:
+json: profile data
+
+
+
+**************************************************************************************
+***********************************Edit Profile***************************************
+**************************************************************************************
+
+PUT https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+json request body:
+{
+"first_name":"string",
+"last_name":"string",
+"education":"string",
+"skills":
+[
+"string",
+"string"
+],
+"interests":
+[
+"string",
+"string"
+],
+"lat": float,
+"lon": float,
+"mon": bool,
+"tue": bool,
+"wed": bool,
+"thu": bool,
+"fri": bool,
+"sat": bool,
+"sun": bool,
+"time_day":"string",
+"photo": "byte_string"
+}
+
+
+required fields:
+none
+
+notes: 
+-all days of the week set to true if not specified
+-aside from email and passwrd, you only need to pass fields you want to edit
+
+
+**************************************************************************************
+***********************************Delete Profile*************************************
+**************************************************************************************
+
+DELETE https://fleet-fortress-211105.appspot.com/_ah/api/connected/v1/profiles
+
+
+notes: 
+-this function will delete the profile of wich the user is logged in to
+
+
 
 

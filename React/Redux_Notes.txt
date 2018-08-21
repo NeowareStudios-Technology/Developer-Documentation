@@ -1,0 +1,37 @@
+Project: Alice Speaks
+Topic: Genereal Redux Notes
+Created by: David Ramirez
+Date: 8/21/18
+Copyright © 2018 LeapWithAlice,LLC. All rights reserved
+
+
+What is redux?
+-Redux is a predictable state container for JavaScript apps
+-evolved from flux (architecture for building user interfaces, created by facebook)
+
+
+What does redux do for you?
+-gives you a single object with every peice of application state in your entire app
+	-What would fall into this category?
+		-whether or not navigation on mobile is open
+		-whether the shopping cart is open
+		-whether an alert message has been triggered
+		-data gathered from api
+		-etc.
+-gives you full state tree of app
+	-can see all the different actions that have taken place
+-can view state of app when a certain action took place
+-makes debugging app easier
+
+
+
+How does redux work? (very high level)
+-Puts entire state into a single object
+-Instead of modifying the state, it takes the current version of the state, modifies what it needs, and returns a new copy of the state
+
+
+Criticisms of Redux:
+-difficult to learn/adds more code
+	-complex
+	-much jargon
+	-this is outweighed by the benefits of Redux (for medium to large apps)
